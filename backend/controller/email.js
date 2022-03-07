@@ -2,8 +2,14 @@ import sgMail from '@sendgrid/mail';
 import dotenv from "dotenv";
 dotenv.config();
 
+<<<<<<< HEAD
 sgMail.setApiKey(process.env.SENDGRID_KEY);
 console.log(process.env.SENDGRID_KEY);
+=======
+sgMail.setApiKey('');
+
+console.log(process.env.SENDGRID);
+>>>>>>> c8d9d91 (Fix: dotenv config fix)
 const sendEmails = async (req, res) => {
   const message = {
     to: 'josehm1999@gmail.com',
