@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SendEmailComponent } from './home/send-email/send-email.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: SendEmailComponent,
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

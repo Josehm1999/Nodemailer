@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailServiceService } from '../../services/email-service.service';
 import { Router } from '@angular/router';
 import {
   MatSnackBar,
@@ -6,15 +7,13 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 
-import { EmailServiceService } from '../../services/email-service.service';
-
 @Component({
   selector: 'app-send-email',
   templateUrl: './send-email.component.html',
   styleUrls: ['./send-email.component.css'],
 })
 export class SendEmailComponent implements OnInit {
-  sendData: any;
+  data: any;
   message: string = '';
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
@@ -24,21 +23,23 @@ export class SendEmailComponent implements OnInit {
     private _router: Router,
     private _snackBar: MatSnackBar
   ) {
-    this.sendData = {};
+    this.data = {};
   }
 
   ngOnInit(): void {}
 
   sendEmail() {
-    if (
-      !this.sendData.to ||
-      !this.sendData.from ||
-      !this.sendData.subject ||
-      !this.sendData.text ||
-      !this.sendData.html
-    ) {
-    } else {
-    }
+    this._emailService.sendEmail(this.data).subscribe({
+      next: () => {
+        this._router.navigate(['/']);
+        this.message = 'Mailing successful';
+        this.openSnackBarSuccesful();
+      },
+      error: (e) => {
+        this.message = e.error.message;
+        this.openSnackBarError();
+      },
+    });
   }
 
   openSnackBarSuccesful() {

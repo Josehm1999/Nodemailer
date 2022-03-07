@@ -7,7 +7,7 @@ import { HeaderComponent } from './home/header/header.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { SendEmailComponent } from './home/send-email/send-email.component';
 import { EmailServiceService } from './services/email-service.service';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -34,6 +34,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatCardModule,
     MatInputModule,
     MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [EmailServiceService],
   bootstrap: [AppComponent],
