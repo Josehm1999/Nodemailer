@@ -1,1 +1,59 @@
-<p>send-email works!</p>
+<div class="form">
+    <mat-card class="card">
+      <mat-card-title>Send email: </mat-card-title>
+      <mat-card-content>
+        <div class="container">
+          <mat-form-field>
+            <input
+              [(ngModel)]="sendData.to"
+              type="text"
+              matInput
+              placeholder="To"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              [(ngModel)]="sendData.from"
+              type="text"
+              matInput
+              placeholder="From"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              [(ngModel)]="sendData.subject"
+              type="text"
+              matInput
+              placeholder="Subject"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              [(ngModel)]="sendData.text"
+              type="text"
+              matInput
+              placeholder="Text"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              [(ngModel)]="sendData.html"
+              type="text"
+              matInput
+              placeholder="Html"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="sendEmail()" class="button" mat-raised-button>
+          Send email
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

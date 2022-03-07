@@ -6,22 +6,36 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './home/header/header.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { SendEmailComponent } from './home/send-email/send-email.component';
-import { EmailServiceService } from "./services/email-service.service";
+import { EmailServiceService } from './services/email-service.service';
+
+import { HttpClientModule } from '@angular/common/http';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SendEmailComponent
+    SendEmailComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatInputModule,
+    MatSnackBarModule,
   ],
-  providers: [
-    EmailServiceService
-  ],
-  bootstrap: [AppComponent]
+  providers: [EmailServiceService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
