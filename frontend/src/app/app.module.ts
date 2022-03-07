@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './home/header/header.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { SendEmailComponent } from './home/send-email/send-email.component';
+import { EmailServiceService } from "./services/email-service.service";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { SendEmailComponent } from './home/send-email/send-email.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    EmailServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
